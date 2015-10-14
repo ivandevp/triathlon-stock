@@ -2,10 +2,10 @@ var app = angular.module('triathlonApp', []);
 
 app.controller('mainController', function($scope, $http) {
 	$scope.message = 'Holaaa!';
-	$scope.pin = '';
-	$scope.login = function() {
-		var pin = $scope.pin;
-		var response = $http.get("http://192.168.1.40/tapi/api/employee/" + pin);
+	$scope.user.pin = '';
+	$scope.user.login = function(user) {
+		console.log("User : " + user);
+		var response = $http.get("http://192.168.1.40/tapi/api/employee/" + user);
 		response.success(function(data, status, headers, config) {
 			if (data == null) {
 				$scope.message = "Usuario no existe";
