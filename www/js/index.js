@@ -37,37 +37,9 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        /*$("#login_form").on("submit", function(e) {
-            e.preventDefault();
-
-        });*/
-        console.log("Holaaa!");
-        $("#login_form").on("submit", function (e) {
-            e.preventDefault();
-            var pin = $("#pin").val();
-            var greet = document.getElementById("greet");
-            $.ajax({
-                type: "GET",
-                url: "http://192.168.1.40/tapi/api/employee/" + pin,
-                success: function(response) {
-                    var employee = response;
-                    console.log(employee);
-                    if (employee == null) {
-                        greet.innerHTML = "<strong>Usuario no existe!!!</strong>";
-                        navigator.notification.alert("PIN INCORRECTO");
-                        console.log("Usuario no existe!!");
-                    } else {
-                        greet.innerHTML = "Usuario correcto: " + employee.FirstName + " " + employee.LastName;
-                        navigator.notification.alert("BIENVENIDO =)");
-                        console.log("Usuario existe!!");
-                        $.mobile.changePage("home.html", {transition: "slideup" });
-                    }
-                },
-                error: function() {
-                    console.log("error");
-                }
-            });
-        });
-        console.log("evento declarado!");
+        console.log('configurando!!');
+        var angularApp = angular.module('triathlonApp', [
+            'triathlon.controllers'
+        ]);
     }
 };
