@@ -16,40 +16,170 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
-body{
-    background-color: #fff;
-    background-repeat:no-repeat;
-    background-size:cover;
+body, html {
+    height: 100%;
+    min-height: 100%;
 }
-body #login{
-    height:100vh;
-    margin:0 !important;
-    padding:5%;
+
+.vertical-center {
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: -webkit-flex; /* For Safari */
+  -webkit-justify-content: center; /* For Safari */
+  -webkit-align-items: center; /* For Safari */
 }
-body #login .recuadro-login{
-    top:50%;transform:translateY(-50%);
+
+.recuadro-login {
     background-color: #020202;
-    text-align:center;padding:25px 30px;
+    text-align: center;
+    padding: 25px 30px;
 }
-body #login .recuadro-login .form-control{
-    margin:5px 0;
-    height:40px !important;
+
+.recuadro-login button {
+    margin: 15px 0;
+    width: 100%;
 }
-body #login .recuadro-login img{
-    margin:20px 0 25px;
+
+.header{
+    width: 100%;
+    height: 65px;
+    background: #ffffff;
+    color: #263c46;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    z-index: 5;
+    -moz-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
-body #login .recuadro-login .btn{
-    padding:8px 12px !important;
+
+.logo{
+    float: left;
+    width: 200px;
+    height: 65px;
+    line-height: 65px;
+    background: #010101;
+    text-align: center;
+    position: relative;
+    margin-right: 65px;
 }
-body #login .recuadro-login button{
-    margin:15px 0;
-    width:100%;
+
+.logo img {
+    height: 64px;
 }
-body #login .form-control:focus{
-    border-color:transparent;
-    border-bottom:2px solid #2e6da4;
+
+.menu-collapse{
+    position: absolute;
+    top: 0px;
+    background: #ffffff;
+    height: 65px;
+    width: 55px;
+    text-decoration: none;
+    right: -65px;
+    cursor: pointer;
+}
+
+.cerrar{
+    font-size: 25px;
+    color: gray;
+    padding: 18px;
+}
+
+.contenido{
+    position: relative;
+    z-index: 4;
+    float: left;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+}
+
+.menu-tiendas{
+    float: left;
+    z-index: 3;
+    height: 100%;
+    width: 200px;
+    height: 100%;
+    color: #ffffff;
+    padding-bottom: 40px;
+}
+
+li {
+    color: #010101!important;
+    border-radius: 0px !important;
+    border: 1px solid #010101 !important;
+    border-left: none !important;
+    border-right: none !important;
+    background: transparent !important;
+    text-align: center;
+}
+
+.contenido-info{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    padding-left: 200px;
+}
+
+.informacion{
+    position: relative;
+    height: 100%;
+    min-height: 100%;
+    padding: 0px;
+    width: 100%;
+    float: left;
+    margin: 0px;
+    background-size: cover;
+    padding: 40px 20px;
+}
+
+.center{
+    text-align: center;
+}
+
+.col-md-10.col-md-offset-1.uno {
+    background-color: rgba(255,255,255,0.8);
+    padding: 40px 20px 20px;
+}
+
+.mb-20{
+    margin-bottom: 20px;
+}
+
+input.form-control, .input-group {
+    height: 40px !important;
+    border: gray;
+    margin-bottom: 20px;
+}
+
+span.input-group-addon {
+    border: gray;
+}
+
+table{
+    margin: 0 !important;
+}
+
+th.center, td {
+    background-color: rgba(255,255,255,0.9);
+}
+
+.table-bordered {
+    border: 2px solid #010101 !important;
+}
+
+.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+    border: 1px solid #000 !important;
 }

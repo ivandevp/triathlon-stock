@@ -1,0 +1,62 @@
+<div class="container-interno" ng-controller="NavBarController">
+    <div class="header">
+        <div class="logo">
+            <img src="img/logo.png">
+            <a class="menu-collapse">
+                <div class="menu-collapse-icon">
+                    <span class="glyphicon glyphicon-align-justify"></span>
+                </div>
+            </a>
+        </div>
+        <div class="cerrar pull-right">
+        	<p>Hola, <strong>{{ user }}</strong>!</p>
+            <a ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span></a>
+        </div>
+    </div>
+</div>
+<div class="contenido">
+    <div class="menu-tiendas" ng-controller="StoreController">
+        <ul class="list-group" ng-show="status == 1" ng-init="status = 1">
+            <li class="list-group-item" ng-repeat="store in stores">{{ store.StoreName }}</li>
+        </ul>
+    </div>
+    <div class="contenido-info" ng-controller="StockController">
+        <div class="informacion" style="background-image: url('img/fondo1.jpg')">
+            <div class="col-md-10 col-md-offset-1 col-md-offset-1 uno mb-20">
+                <form method="post" role="form">
+                    <div class="col-xs-6 col-md-5">
+                        <input class="form-control" type="number" name="codigo" placeholder="Código de Producto" ng-model="product">
+                    </div>
+                    <div class="col-md-2 center">
+                        <button class="btn btn-primary" type="submit" style="height:40px; width: 100%;" ng-click="queryStock()">INGRESAR</button>
+                    </div>
+                    <div class="col-xs-6 col-md-5">
+                        <div class="input-group">
+                            <span class="input-group-addon">S/.</span>
+                            <input type="text" class="form-control" disabled="" ng-model="price">
+                            <span class="input-group-addon">.00</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-10 col-md-offset-1 uno">
+                <div class="col-md-10 col-md-offset-1" style="padding: 5px 0 0;">
+                    <table class="table table-hover table-bordered center">
+                        <thead>
+                            <tr>
+                                <th class="center">TALLA</th>
+                                <th class="center">STOCK</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="size in sizes">
+                                <td>{{ size.SizeCode }}</td>
+                                <td>{{ size.OnHandQty }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
