@@ -1,0 +1,15 @@
+<div id="login" ng-controller="UserController" class="vertical-center" style="background-image: url('img/wallpaper.jpg');">
+    <div class="col-md-4 recuadro-login">
+        <img src="img/logo.png">
+        <div class="row">
+            <form id="login_form" role="form">
+                <div class="col-xs-12">
+                    <input type="text" id="pin" class="form-control" name="user" placeholder="PIN" required ng-model="pin">
+                </div>
+                <div class="col-xs-12">
+                    <button type="submit" ng-click="login()" class="btn btn-primary">INGRESAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
