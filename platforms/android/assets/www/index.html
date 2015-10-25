@@ -40,15 +40,15 @@
         <script type="text/javascript" src="js/controllers.js"></script>
         <!--<script type="text/javascript" src="js/index.js"></script>-->
         <script type="text/javascript">
-            app.initialize();
             function onConfirm(buttonIndex) {
-                console.log(buttonIndex);
-                navigator.app.exitApp();
+                if (buttonIndex == 1) {
+                    navigator.app.exitApp();
+                }
             }
             function backKeyDown() {
                 navigator.notification.confirm('¿Está seguro que desea salir?', onConfirm, 'Triathlon', ['Salir', 'Cancelar']);
             }
-            document.addEventListener("backKeyDown", backKeyDown, true);
+            document.addEventListener("backbutton", backKeyDown, true);
         </script>
     </body>
 </html>
