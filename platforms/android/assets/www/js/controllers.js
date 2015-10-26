@@ -5,7 +5,8 @@
 			$scope.pin = '';
 			$scope.login = function() {
 				var pin = $scope.pin;
-				$http.get("http://192.168.1.40/tapi/api/employee/" + pin)
+				console.log(pin);
+				$http.get("http://181.65.236.235/tapi/api/employee/" + pin)
 					.success(function(data, status, headers, config) {
 						if (data == null) {
 			                navigator.notification.alert("PIN INCORRECTO");
@@ -31,7 +32,7 @@
 		}])
 		.controller('StoreController', ['$scope', '$http', function($scope, $http) {
 			$scope.stores = [];
-			$http.get("http://192.168.1.40/tapi/api/store")
+			$http.get("http://181.65.236.235/tapi/api/store")
 				.success(function(data, status, headers, config) {
 					$scope.stores = data;
 				})
@@ -44,7 +45,7 @@
 			$scope.price = '';
 			$scope.sizes = [];
 			$scope.queryStock = function() {
-				$http.get("http://192.168.1.40/tapi/api/product/" + $scope.product + "/1")
+				$http.get("http://181.65.236.235/tapi/api/product/" + $scope.product + "/1")
 					.success(function(data, status, headers, config) {
 						if (data != null) {
 							$scope.price = data[0].RetailPrice;
