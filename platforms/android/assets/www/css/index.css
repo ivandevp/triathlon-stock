@@ -90,9 +90,14 @@ body, html {
 }
 
 .cerrar{
-    font-size: 25px;
+    font-size: 12px;
     color: gray;
-    padding: 18px;
+    padding: 23px 5px 0 0;
+    vertical-align: center;
+}
+
+.fs-23{
+    font-size: 23px;
 }
 
 .contenido{
@@ -104,45 +109,26 @@ body, html {
     min-height: 100%;
 }
 
-.menu-tiendas{
-    float: left;
-    z-index: 3;
-    height: 100%;
-    width: 200px;
-    height: 100%;
-    color: #ffffff;
-    padding-bottom: 40px;
-}
-
-li {
-    color: #010101!important;
-    border-radius: 0px !important;
-    border: 1px solid #010101 !important;
-    border-left: none !important;
-    border-right: none !important;
-    background: transparent !important;
-    text-align: center;
-}
-
 .contenido-info{
     position: relative;
     z-index: 2;
     width: 100%;
     height: 100%;
     min-height: 100%;
-    padding-left: 200px;
 }
 
 .informacion{
     position: relative;
     height: 100%;
     min-height: 100%;
-    padding: 0px;
     width: 100%;
     float: left;
     margin: 0px;
-    background-size: cover;
-    padding: 40px 20px;
+    padding: 30px 10px;
+}
+
+.borde-input{
+    border: 1px solid #333 !important;
 }
 
 .center{
@@ -150,12 +136,25 @@ li {
 }
 
 .col-md-10.col-md-offset-1.uno {
-    background-color: rgba(255,255,255,0.8);
-    padding: 40px 20px 20px;
+    background-color: rgba(0,0,0,0.2);
+    padding: 3px 20px 0;
 }
 
 .mb-20{
-    margin-bottom: 20px;
+    margin-bottom: 20px !important;
+}
+.pt-20{
+    padding-top: 20px !important;
+}
+.pb-20{
+    padding-bottom: 20px !important;
+}
+.pb-10{
+    padding-bottom: 10px !important;
+}
+.disponible{
+    color: purple;
+    padding: 0 0 15px 20px;
 }
 
 input.form-control, .input-group {
