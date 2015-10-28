@@ -77,7 +77,7 @@
 					console.log("Error");
 				});
 			$scope.goBack = function() {
-				history.go(-1);
+				//history.go(-1);
 				navigator.app.backHistory();
 			};
 		}]);

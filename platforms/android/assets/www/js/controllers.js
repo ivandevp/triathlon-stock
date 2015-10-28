@@ -4,6 +4,7 @@
 		.controller('UserController', ['$scope', '$http', '$location', function($scope, $http, $location) {
 			$scope.pin = '';
 			$scope.login = function() {
+				console.log("login!");
 				var pin = $scope.pin;
 				$http.get("http://181.65.236.235/stock/api/employee/" + pin)
 					.success(function(data, status, headers, config) {
@@ -64,15 +65,20 @@
 				console.log(sku);
 				$location.url('/stock/' + sku);
 			};
-		}]);
-		.controller('SKUController', ['$scope', '$htpp', '$location', '$routeParams', function($scope, $http, $location, $routeParams) {
-			console.log($routeParams.sku);
+		}])
+		.controller('SKUController', ['$scope', '$http', '$location', '$routeParams', function($scope, $http, $location, $routeParams) {
+			var sku = $routeParams.sku;
 			$http.get("http://181.65.236.235/stock/api/product/" + sku)
 				.success(function(data, status, headers, config) {
-
+					console.log(data);
+					$scope.stores = data;					
 				})
 				.error(function(data, status, headers, config) {
 					console.log("Error");
 				});
+			$scope.goBack = function() {
+				history.go(-1);
+				navigator.app.backHistory();
+			};
 		}]);
 })();
