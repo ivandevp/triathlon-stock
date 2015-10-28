@@ -25,17 +25,17 @@
                         <button class="btn btn-primary" type="submit" style="height:40px; width: 100%;" ng-click="queryStock()"><span class="glyphicon glyphicon-search"></span></button>
                     </div>
                     <div class="col-xs-6 col-md-5">
-                        <input type="text" class="form-control borde-input" placeholder="Descripción del producto" ng-model="description">
+                        <input type="text" class="form-control borde-input" placeholder="Descripción del producto" ng-model="description" disabled="true">
                     </div>
                 </form>
             </div>
             <div class="col-md-10 col-md-offset-1 uno mb-20">
                 <form method="post" role="form">
                     <div class="col-xs-6 col-md-6">
-                        <input type="text" class="form-control borde-input" placeholder="Precio del producto" ng-model="price">
+                        <input type="text" class="form-control borde-input" placeholder="Precio del producto" ng-model="price" disabled="true">
                     </div>
                     <div class="col-xs-6 col-md-6">
-                        <input type="text" class="form-control borde-input" placeholder="Promoción activa" ng-model="promo">
+                        <input type="text" class="form-control borde-input" placeholder="Promoción activa" ng-model="promo" disabled="true">
                     </div>
                     <label class="disponible">* {{ webproduct }}</label>
                 </form>
