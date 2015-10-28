@@ -1,5 +1,6 @@
 var app = angular.module('triathlonApp', [
 	'ngRoute',
+	'ui.bootstrap',
 	'triathlon.controllers'
 ]);
 
@@ -10,6 +11,9 @@ app.config(['$routeProvider', function($routeProvider) {
 		})
 		.when('/home', {
 			templateUrl: 'views/home.html'
+		})
+		.when('/stock/:sku', {
+			templateUrl: 'views/stock.html'
 		})
 		.otherwise({
 			redirectTo: '/'
