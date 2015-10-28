@@ -54,7 +54,7 @@
                             <tr ng-repeat="size in sizes">
                                 <td>{{ size.SizeCode }}</td>
                                 <td>{{ size.OnHandQty }}</td>
-                                <td><button type="button" class="btn btn-primary" ng-click="searchStock(size.SKU)">Ver disponibilidad</button></td>
+                                <td><button type="button" class="btn btn-primary" ng-click="searchStock(size.SKU, size.SizeCode)">Ver disponibilidad</button></td>
                             </tr>
                         </tbody>
                     </table>

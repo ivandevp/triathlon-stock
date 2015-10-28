@@ -12,7 +12,7 @@ app.config(['$routeProvider', function($routeProvider) {
 		.when('/home', {
 			templateUrl: 'views/home.html'
 		})
-		.when('/stock/:sku', {
+		.when('/stock/:sku/:size', {
 			templateUrl: 'views/stock.html'
 		})
 		.otherwise({

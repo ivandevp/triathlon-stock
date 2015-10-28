@@ -1,4 +1,23 @@
+<div class="container-interno" ng-controller="NavBarController">
+    <div class="header">
+        <div class="logo">
+            <img src="img/logo.png">
+        </div>
+        <div style="display:inline-block; text-align:center; padding: 19px 0 0 60px;">
+            <span class="fs-23" style="text-align:center;">CONSULTA DE PRODUCTOS EN TIENDA</span>
+        </div>
+        
+        <div class="cerrar pull-right">
+            <span>Hola, <strong>{{ user }}</strong>!</span>
+            <a ng-click="logout()"><span class="glyphicon glyphicon-log-out fs-23"></span></a>
+        </div>
+    </div>
+</div>
+<br>
 <div class="container" ng-controller="SKUController">
+    <div class="row">
+        <p class="text-center">Disponibilidad de SKU : {{ sku }} (Talla {{ size }})</p>
+    </div>
     <div class="row">
         <div class="col-md-10 col-md-offset-1" style="padding: 5px 0 0;">
             <table class="table table-hover table-bordered center">
@@ -17,6 +36,7 @@
             </table>
         </div>
     </div>
+    <br>
     <div style="text-align:center;">
         <button class="btn btn-primary" ng-click="goBack()">Volver</button>
     </div>
