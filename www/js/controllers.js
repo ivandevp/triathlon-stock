@@ -70,10 +70,15 @@
 			var sku = $routeParams.sku;
 			$http.get("http://181.65.236.235/stock/api/product/" + sku)
 				.success(function(data, status, headers, config) {
-
+					console.log(data);
+					$scope.stores = data;					
 				})
 				.error(function(data, status, headers, config) {
 					console.log("Error");
 				});
+			$scope.goBack = function() {
+				history.go(-1);
+				navigator.app.backHistory();
+			};
 		}]);
 })();
