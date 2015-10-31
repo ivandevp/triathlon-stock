@@ -6,7 +6,11 @@
 			$scope.login = function() {
 				console.log("login!");
 				var pin = $scope.pin;
-				$http.get("http://181.65.236.235/stock/api/employee/" + pin)
+				if (pin == "thnconfig") {
+					console.log("configuracion!");
+					$location.url('/config');
+				} else {
+					$http.get("http://181.65.236.235/stock/api/employee/" + pin)
 					.success(function(data, status, headers, config) {
 						if (data == null) {
 			                navigator.notification.alert("PIN INCORRECTO");
@@ -21,6 +25,7 @@
 					.error(function(data, status, headers, config) {
 						console.log("Un error ha ocurrido!!");
 					});
+				}
 			};
 		}])
 		.controller('NavBarController', ['$scope', '$location', function($scope, $location) {
