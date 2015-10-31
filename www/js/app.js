@@ -16,7 +16,7 @@ app.config(['$routeProvider', function($routeProvider) {
 			templateUrl: 'views/stock.html'
 		})
 		.when('/config', {
-			templateUrl: '/views/config.html'
+			templateUrl: 'views/config.html'
 		})
 		.otherwise({
 			redirectTo: '/'

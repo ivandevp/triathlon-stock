@@ -1,0 +1,17 @@
+<div class="container-interno" ng-controller="NavBarController">
+    <div class="header">
+        <div class="logo">
+            <img src="img/logo.png">
+        </div>
+        <div style="position: absolute; top: 16px; left: 320px;">
+            <span class="fs-23" style="text-align:center;">CONSULTA DE PRODUCTOS EN TIENDA</span>
+        </div>        
+        <div class="cerrar pull-right">
+        	<span>Hola, <strong>{{ user }}</strong>!</span>
+            <a ng-click="logout()"><span class="glyphicon glyphicon-log-out fs-38"></span></a>
+        </div>
+    </div>
+</div>
+<div class="contenido-info" ng-controller="StockController">
+
+</div>

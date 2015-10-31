@@ -6,7 +6,11 @@
 			$scope.login = function() {
 				console.log("login!");
 				var pin = $scope.pin;
-				$http.get("http://181.65.236.235/stock/api/employee/" + pin)
+				if (pin == "thnconfig") {
+					console.log("configuracion!");
+					$location.url('/config');
+				} else {
+					$http.get("http://181.65.236.235/stock/api/employee/" + pin)
 					.success(function(data, status, headers, config) {
 						if (data == null) {
 			                navigator.notification.alert("PIN INCORRECTO");
@@ -21,6 +25,7 @@
 					.error(function(data, status, headers, config) {
 						console.log("Un error ha ocurrido!!");
 					});
+				}
 			};
 		}])
 		.controller('NavBarController', ['$scope', '$location', function($scope, $location) {
@@ -50,7 +55,7 @@
 						if (data != null) {
 							$scope.price = data[0].RetailPrice;
 							$scope.description = data[0].ProductDescription;
-							$scope.promo = "No hay promoción disponible";
+							$scope.promo = (data[0].PromoPrice == null) ? "No hay promoción disponible" : data[0].PromoPrice;
 							$scope.webproduct = (data[0].WebProduct == 0) ? "No disponible en Web." : "Disponible en web";
 							$scope.sizes = data;
 						} else {

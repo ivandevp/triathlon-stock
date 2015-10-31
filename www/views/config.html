@@ -1,0 +1,34 @@
+<div class="container-interno" ng-controller="NavBarController">
+    <div class="header">
+        <div class="logo">
+            <img src="img/logo.png">
+        </div>
+        <div style="position: absolute; top: 16px; left: 320px;">
+            <span class="fs-23" style="text-align:center;">CONSULTA DE PRODUCTOS EN TIENDA</span>
+        </div>        
+        <div class="cerrar pull-right">
+        	<span>Hola, <strong>{{ user }}</strong>!</span>
+            <a ng-click="logout()"><span class="glyphicon glyphicon-log-out fs-38"></span></a>
+        </div>
+    </div>
+</div>
+<div class="contenido-info" ng-controller="StockController">
+    <div class="col-xs-6 col-xs-offset-3 bg-config">
+        <div class="row">
+            <form id="login_form" role="form" ng-submit="login()">
+                <div class="col-xs-10 col-xs-offset-1">
+                    <input type="number" id="pin" class="form-control" name="user" placeholder="IP General" required ng-model="pin">
+                </div>
+                <div class="col-xs-10 col-xs-offset-1">
+                    <input type="number" id="pin" class="form-control" name="user" placeholder="IP Local" required ng-model="pin">
+                </div>
+                <div class="col-xs-10 col-xs-offset-1">
+                    <input type="number" id="pin" class="form-control" name="user" placeholder="Número de Tienda" required ng-model="pin">
+                </div>
+                <div class="col-xs-10 col-xs-offset-1">
+                    <button type="submit" class="btn btn-ingresar" style="width:100%">INGRESAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

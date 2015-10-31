@@ -15,6 +15,9 @@ app.config(['$routeProvider', function($routeProvider) {
 		.when('/stock/:sku/:size', {
 			templateUrl: 'views/stock.html'
 		})
+		.when('/config', {
+			templateUrl: 'views/config.html'
+		})
 		.otherwise({
 			redirectTo: '/'
 		});
