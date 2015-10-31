@@ -61,16 +61,17 @@
 						console.log("Error");
 					});
 			};
-			$scope.searchStock = function(sku) {
-				console.log(sku);
-				$location.url('/stock/' + sku);
+			$scope.searchStock = function(sku, size) {
+				$location.url('/stock/' + sku + '/' + size);
 			};
 		}])
 		.controller('SKUController', ['$scope', '$http', '$location', '$routeParams', function($scope, $http, $location, $routeParams) {
 			var sku = $routeParams.sku;
+			$scope.sku = sku;
+			var size = $routeParams.size;
+			$scope.size = size;
 			$http.get("http://181.65.236.235/stock/api/product/" + sku)
 				.success(function(data, status, headers, config) {
-					console.log(data);
 					$scope.stores = data;					
 				})
 				.error(function(data, status, headers, config) {

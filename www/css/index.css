@@ -53,11 +53,8 @@ body, html {
     width: 100%;
     height: 65px;
     background: #ffffff;
-    color: #263c46;
     position: relative;
-    left: 0px;
-    top: 0px;
-    z-index: 5;
+    color: #263c46;
     -moz-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
@@ -67,64 +64,49 @@ body, html {
     float: left;
     width: 200px;
     height: 65px;
-    line-height: 65px;
     background: #010101;
     text-align: center;
-    position: relative;
-    margin-right: 65px;
+    position: absolute;
 }
 
 .logo img {
     height: 64px;
 }
 
-.menu-collapse{
-    position: absolute;
-    top: 0px;
-    background: #ffffff;
-    height: 65px;
-    width: 55px;
-    text-decoration: none;
-    right: -65px;
-    cursor: pointer;
+.cerrar{
+    font-size: 13px;
+    color: gray;
+    padding: 26px 50px 0 0;
+    vertical-align: center;
 }
 
-.cerrar{
-    font-size: 12px;
-    color: gray;
-    padding: 23px 5px 0 0;
-    vertical-align: center;
+.cerrar a{
+    position: absolute;
+    right: 5px;
+    top: 13px;
 }
 
 .fs-23{
     font-size: 23px;
 }
 
-.contenido{
-    position: relative;
-    z-index: 4;
-    float: left;
-    width: 100%;
-    height: 100%;
-    min-height: 100%;
+.fs-38{
+    font-size: 38px;
 }
 
 .contenido-info{
-    position: relative;
-    z-index: 2;
     width: 100%;
     height: 100%;
     min-height: 100%;
+    padding: 20px 0;
 }
 
 .informacion{
-    position: relative;
     height: 100%;
     min-height: 100%;
     width: 100%;
-    float: left;
     margin: 0px;
-    padding: 30px 10px;
+    padding: 30px 0px;
 }
 
 .borde-input{
@@ -135,9 +117,8 @@ body, html {
     text-align: center;
 }
 
-.col-md-10.col-md-offset-1.uno {
-    background-color: rgba(0,0,0,0.2);
-    padding: 3px 20px 0;
+.uno {
+    background-color: rgba(153, 153, 153, 0.8);
 }
 
 .mb-20{
@@ -145,6 +126,9 @@ body, html {
 }
 .pt-20{
     padding-top: 20px !important;
+}
+.pt-30{
+    padding-top: 30px !important;
 }
 .pb-20{
     padding-bottom: 20px !important;

@@ -3,22 +3,26 @@
         <div class="logo">
             <img src="img/logo.png">
         </div>
-        <div style="display:inline-block; text-align:center; padding: 19px 0 0 60px;">
+        <div style="position: absolute; top: 16px; left: 320px;">
             <span class="fs-23" style="text-align:center;">CONSULTA DE PRODUCTOS EN TIENDA</span>
-        </div>
-        
+        </div>        
         <div class="cerrar pull-right">
             <span>Hola, <strong>{{ user }}</strong>!</span>
-            <a ng-click="logout()"><span class="glyphicon glyphicon-log-out fs-23"></span></a>
+            <a ng-click="logout()"><span class="glyphicon glyphicon-log-out fs-38"></span></a>
         </div>
     </div>
 </div>
 <br>
-<div class="container" ng-controller="SKUController">
-    <div class="row">
-        <p class="text-center">Disponibilidad de SKU : {{ sku }} (Talla {{ size }})</p>
+<div class="contenido-info" ng-controller="SKUController">
+    <div class="row" style="padding: 15px 0">
+        <div class="col-xs-7 col-xs-offset-1">
+            <p class="text-center fs-23"><strong>Disponibilidad de SKU :</strong> {{ sku }} (Talla {{ size }})</p>
+        </div>                
+        <div class="col-xs-3">
+            <button class="btn btn-primary" ng-click="goBack()" style="width:100%;">VOLVER</button>
+        </div>
     </div>
-    <div class="row">
+    <div class="col-md-10 col-md-offset-1 uno pb-20 pt-20">
         <div class="col-md-10 col-md-offset-1" style="padding: 5px 0 0;">
             <table class="table table-hover table-bordered center">
                 <thead>
@@ -37,7 +41,5 @@
         </div>
     </div>
     <br>
-    <div style="text-align:center;">
-        <button class="btn btn-primary" ng-click="goBack()">Volver</button>
-    </div>
+    
 </div>

@@ -3,62 +3,59 @@
         <div class="logo">
             <img src="img/logo.png">
         </div>
-        <div style="display:inline-block; text-align:center; padding: 19px 0 0 60px;">
+        <div style="position: absolute; top: 16px; left: 320px;">
             <span class="fs-23" style="text-align:center;">CONSULTA DE PRODUCTOS EN TIENDA</span>
-        </div>
-        
+        </div>        
         <div class="cerrar pull-right">
         	<span>Hola, <strong>{{ user }}</strong>!</span>
-            <a ng-click="logout()"><span class="glyphicon glyphicon-log-out fs-23"></span></a>
+            <a ng-click="logout()"><span class="glyphicon glyphicon-log-out fs-38"></span></a>
         </div>
     </div>
 </div>
-<div>
-    <div class="contenido-info" ng-controller="StockController">
-        <div class="informacion">
-            <div class="col-md-10 col-md-offset-1 col-md-offset-1 uno pt-20">
-                <form method="post" role="form">
-                    <div class="col-xs-6 col-md-5">
-                        <input class="form-control borde-input" type="text" name="codigo" placeholder="Código de Producto" ng-model="product">
-                    </div>
-                    <div class="col-md-2 center">
-                        <button class="btn btn-primary" type="submit" style="height:40px; width: 100%;" ng-click="queryStock()"><span class="glyphicon glyphicon-search"></span></button>
-                    </div>
-                    <div class="col-xs-6 col-md-5">
-                        <input type="text" class="form-control borde-input" placeholder="Descripción del producto" ng-model="description" disabled="true">
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-10 col-md-offset-1 uno mb-20">
-                <form method="post" role="form">
-                    <div class="col-xs-6 col-md-6">
-                        <input type="text" class="form-control borde-input" placeholder="Precio del producto" ng-model="price" disabled="true">
-                    </div>
-                    <div class="col-xs-6 col-md-6">
-                        <input type="text" class="form-control borde-input" placeholder="Promoción activa" ng-model="promo" disabled="true">
-                    </div>
-                    <label class="disponible">* {{ webproduct }}</label>
-                </form>
-            </div>
-            <div class="col-md-10 col-md-offset-1 uno pb-20 pt-20">
-                <div class="col-md-10 col-md-offset-1" style="padding: 5px 0 0;">
-                    <table class="table table-hover table-bordered center">
-                        <thead>
-                            <tr>
-                                <th class="center">TALLA</th>
-                                <th class="center">STOCK</th>
-                                <th class="center">ACCIÓN</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="size in sizes">
-                                <td>{{ size.SizeCode }}</td>
-                                <td>{{ size.OnHandQty }}</td>
-                                <td><button type="button" class="btn btn-primary" ng-click="searchStock(size.SKU, size.SizeCode)">Ver disponibilidad</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
+<div class="contenido-info" ng-controller="StockController">
+    <div class="informacion">
+        <div class="col-md-10 col-md-offset-1 col-md-offset-1 uno pt-30">
+            <form method="post" role="form">
+                <div class="col-xs-6 col-md-5">
+                    <input class="form-control borde-input" type="text" name="codigo" placeholder="Código de Producto" ng-model="product">
                 </div>
+                <div class="col-md-2 center">
+                    <button class="btn btn-primary" type="submit" style="height:40px; width: 100%;" ng-click="queryStock()"><span class="glyphicon glyphicon-search fs-23"></span></button>
+                </div>
+                <div class="col-xs-6 col-md-5">
+                    <input type="text" class="form-control borde-input" placeholder="Descripción del producto" ng-model="description" disabled="true">
+                </div>
+            </form>
+        </div>
+        <div class="col-md-10 col-md-offset-1 uno mb-20">
+            <form method="post" role="form">
+                <div class="col-xs-6 col-md-6">
+                    <input type="text" class="form-control borde-input" placeholder="Precio del producto" ng-model="price" disabled="true">
+                </div>
+                <div class="col-xs-6 col-md-6">
+                    <input type="text" class="form-control borde-input" placeholder="Promoción activa" ng-model="promo" disabled="true">
+                </div>
+                <label class="disponible">* {{ webproduct }}</label>
+            </form>
+        </div>
+        <div class="col-md-10 col-md-offset-1 uno pb-20 pt-20">
+            <div class="col-md-10 col-md-offset-1" style="padding: 5px 0 0;">
+                <table class="table table-hover table-bordered center">
+                    <thead>
+                        <tr>
+                            <th class="center">TALLA</th>
+                            <th class="center">STOCK</th>
+                            <th class="center">ACCIÓN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="size in sizes">
+                            <td>{{ size.SizeCode }}</td>
+                            <td>{{ size.OnHandQty }}</td>
+                            <td><button type="button" class="btn btn-primary" ng-click="searchStock(size.SKU, size.SizeCode)">Ver disponibilidad</button></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

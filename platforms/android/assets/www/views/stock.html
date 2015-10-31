@@ -13,7 +13,11 @@
         </div>
     </div>
 </div>
+<br>
 <div class="container" ng-controller="SKUController">
+    <div class="row">
+        <p class="text-center">Disponibilidad de SKU : {{ sku }} (Talla {{ size }})</p>
+    </div>
     <div class="row">
         <div class="col-md-10 col-md-offset-1" style="padding: 5px 0 0;">
             <table class="table table-hover table-bordered center">
@@ -32,6 +36,7 @@
             </table>
         </div>
     </div>
+    <br>
     <div style="text-align:center;">
         <button class="btn btn-primary" ng-click="goBack()">Volver</button>
     </div>
