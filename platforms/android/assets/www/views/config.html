@@ -7,11 +7,28 @@
             <span class="fs-23" style="text-align:center;">CONSULTA DE PRODUCTOS EN TIENDA</span>
         </div>        
         <div class="cerrar pull-right">
-        	<span>Hola, <strong>{{ user }}</strong>!</span>
+        	<span>Mobile Admin<strong>{{ user }}</strong>!</span>
             <a ng-click="logout()"><span class="glyphicon glyphicon-log-out fs-38"></span></a>
         </div>
     </div>
 </div>
-<div class="contenido-info" ng-controller="StockController">
-
+<div class="contenido-info" ng-controller="ConfigController">
+    <div class="col-xs-6 col-xs-offset-3 bg-config">
+        <div class="row">
+            <form id="login_form" role="form" ng-submit="saveSettings()">
+                <div class="col-xs-10 col-xs-offset-1">
+                    <input type="text" id="general_ip" class="form-control" name="general_ip" placeholder="IP General" required ng-model="general_ip">
+                </div>
+                <div class="col-xs-10 col-xs-offset-1">
+                    <input type="text" id="local_ip" class="form-control" name="local_ip" placeholder="IP Local" required ng-model="local_ip">
+                </div>
+                <div class="col-xs-10 col-xs-offset-1">
+                    <input type="text" id="store_no" class="form-control" name="store_no" placeholder="Número de Tienda" required ng-model="store_no">
+                </div>
+                <div class="col-xs-10 col-xs-offset-1">
+                    <button type="submit" class="btn btn-ingresar" style="width:100%">INGRESAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>

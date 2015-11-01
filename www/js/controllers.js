@@ -10,7 +10,8 @@
 					console.log("configuracion!");
 					$location.url('/config');
 				} else {
-					$http.get("http://181.65.236.235/stock/api/employee/" + pin)
+					var general_ip = window.localStorage.getItem("general_ip");
+					$http.get("http://" + general_ip + "/stock/api/employee/" + pin)
 					.success(function(data, status, headers, config) {
 						if (data == null) {
 			                navigator.notification.alert("PIN INCORRECTO");
@@ -37,7 +38,8 @@
 		}])
 		.controller('StoreController', ['$scope', '$http', function($scope, $http) {
 			$scope.stores = [];
-			$http.get("http://181.65.236.235/stock/api/store")
+			var general_ip = window.localStorage.getItem("general_ip");
+			$http.get("http://" + general_ip + "/stock/api/store")
 				.success(function(data, status, headers, config) {
 					$scope.stores = data;
 				})
@@ -50,7 +52,8 @@
 			$scope.price = '';
 			$scope.sizes = [];
 			$scope.queryStock = function() {
-				$http.get("http://181.65.236.235/stock/api/product/" + $scope.product + "/1")
+				var general_ip = window.localStorage.getItem("general_ip");
+				$http.get("http://" + general_ip + "/stock/api/product/" + $scope.product + "/1")
 					.success(function(data, status, headers, config) {
 						if (data != null) {
 							$scope.price = data[0].RetailPrice;
@@ -75,7 +78,8 @@
 			$scope.sku = sku;
 			var size = $routeParams.size;
 			$scope.size = size;
-			$http.get("http://181.65.236.235/stock/api/product/" + sku)
+			var general_ip = window.localStorage.getItem("general_ip");
+			$http.get("http://" + general_ip + "/stock/api/product/" + sku)
 				.success(function(data, status, headers, config) {
 					$scope.stores = data;					
 				})
@@ -85,6 +89,31 @@
 			$scope.goBack = function() {
 				//history.go(-1);
 				navigator.app.backHistory();
+			};
+		}])
+		.controller('ConfigController', ['$scope', function($scope) {
+			var general_ip = window.localStorage.getItem("general_ip");
+			var local_ip = window.localStorage.getItem("local_ip");
+			var store_no = window.localStorage.getItem("store_no");
+			$scope.general_ip = general_ip == "undefined" ? "" : general_ip;
+			$scope.local_ip = local_ip == "undefined" ? "" : local_ip;
+			$scope.store_no = store_no == "undefined" ? "" : store_no;
+			$scope.saveSettings = function() {
+				console.log("holaaa!");
+				var form_general_ip = $scope.general_ip;
+				var form_local_ip = $scope.local_ip;
+				var form_store_no = $scope.store_no;
+				console.log(form_general_ip);
+				console.log(form_local_ip);
+				console.log(form_store_no);
+				if (form_general_ip == null || form_local_ip == null || form_store_no == null) {
+					navigator.notification.alert("Debe ingresar todos los campos.");
+				} else {
+					window.localStorage.setItem("general_ip", $scope.general_ip);
+					window.localStorage.setItem("local_ip", $scope.local_ip);
+					window.localStorage.setItem("store_no", $scope.store_no);
+					navigator.notification.alert("Configuración guardada correctamente.");
+				}
 			};
 		}]);
 })();
