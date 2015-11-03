@@ -53,12 +53,13 @@
 			$scope.sizes = [];
 			$scope.queryStock = function() {
 				var general_ip = window.localStorage.getItem("general_ip");
-				$http.get("http://" + general_ip + "/stock/api/product/" + $scope.product + "/1")
+				var store_no = window.localStorage.getItem("store_no");
+				$http.get("http://" + general_ip + "/stock/api/product/" + $scope.product + "/" + store_no)
 					.success(function(data, status, headers, config) {
 						if (data != null) {
-							$scope.price = data[0].RetailPrice;
+							$scope.price = "Precio : " + data[0].RetailPrice;
 							$scope.description = data[0].ProductDescription;
-							$scope.promo = (data[0].PromoPrice == null) ? "No hay promoción disponible" : data[0].PromoPrice;
+							$scope.promo = (data[0].PromoPrice == null) ? "No hay promoción disponible" : "Promo : " + data[0].PromoPrice;
 							$scope.webproduct = (data[0].WebProduct == 0) ? "No disponible en Web." : "Disponible en web";
 							$scope.sizes = data;
 						} else {
