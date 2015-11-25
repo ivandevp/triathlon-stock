@@ -27,12 +27,8 @@ body, html {
 }
 
 .login-wall{
-<<<<<<< HEAD
-    background-image: url('../img/fondo3.jpg');
+    background-image: url('../img/fondoB1.jpg');
     background-size: cover;
-=======
-    background-image: url('../img/wallpaper.jpg');
->>>>>>> 2684115f86f7a1d461b6640af12b48e22e8030fb
 }
 
 .vertical-center {
