@@ -1,17 +1,19 @@
-<div id="login" ng-controller="UserController" class="vertical-center">
-    <div class="row">
-        <div class="col-md-4 col-md-offset-4 recuadro-login">
-            <img src="img/logo.png">
-            <div class="row">
-                <form id="login_form" role="form" ng-submit="login()">
-                    <div class="col-xs-12">
-                        <input type="text" id="pin" class="form-control" name="user" placeholder="PIN" required ng-model="pin">
-                    </div>
-                    <div class="col-xs-12">
-                        <button type="submit" class="btn btn-primary">INGRESAR</button>
-                    </div>
-                </form>
-                <i class="fa fa-2x fa-spinner fa-pulse" style="color:#2FAEC8"></i>
+<div style="width:100%;height:100%" class="login-wall">
+    <div id="login" ng-controller="UserController" class="vertical-center">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 recuadro-login">
+                <img src="img/logo.png">
+                <div class="row">
+                    <form id="login_form" role="form" ng-submit="login()">
+                        <div class="col-xs-12">
+                            <input type="text" id="pin" class="form-control" name="user" placeholder="PIN" required ng-model="pin">
+                        </div>
+                        <div class="col-xs-12">
+                            <button type="submit" class="btn btn-primary" ng-disabled="processing">INGRESAR</button>
+                        </div>
+                    </form>
+                    <i class="fa fa-2x fa-spinner fa-pulse" style="color:#2FAEC8" ng-show="processing"></i>
+                </div>
             </div>
         </div>
     </div>

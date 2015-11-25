@@ -7,8 +7,8 @@
     </feature>
     <allow-intent href="market:*" />
     <name>Consult-Matic</name>
-    <description>Consulta de stock para las tiendas</description>
-    <author email="support@phonegap.com" href="http://phonegap.com">Triathlon E-commerce Team</author>
+    <description>Consulta de stock para las tiendas Triathlon</description>
+    <author email="imedina@triathlon-sport.com" href="http://phonegap.com">Triathlon E-commerce Team</author>
     <content src="index.html" />
     <preference name="phonegap-version" value="cli-5.2.0" />
     <preference name="permissions" value="none" />

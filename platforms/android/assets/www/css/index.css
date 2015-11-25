@@ -26,8 +26,13 @@ body, html {
     min-height: 100%;
 }
 
+body section {
+    height: 100%;
+    min-height: 100%;
+}
+
 .login-wall{
-    background-image: url('../img/fondoB1.jpg');
+    background-image: url('../img/wallpaper.jpg');
     background-size: cover;
 }
 
