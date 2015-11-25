@@ -9,29 +9,35 @@
 				console.log("login!");
 				var pin = $scope.pin;
 				if (pin == "thnconfig") {
-					console.log("configuracion!");
 					$scope.processing = false;
 					$location.url('/config');
 				} else {
 					var general_ip = window.localStorage.getItem("general_ip");
-					$http.get("http://" + general_ip + "/stock/api/employee/" + pin)
-					.success(function(data, status, headers, config) {
-						if (data == null) {
-			                navigator.notification.alert("PIN INCORRECTO");
-			                $scope.processing = false;
-			                console.log("Usuario no existe!!");
-			            } else {
-			                console.log("Usuario existe!!");
-			                var user = data.FirstName + " " + data.LastName;
-			                window.localStorage.setItem("user", user);
-			                $scope.processing = false;
-			                $location.url('/home');
-			            }
-					})
-					.error(function(data, status, headers, config) {
+					var local_ip = window.localStorage.getItem("local_ip");
+					var store_no = window.localStorage.getItem("store_no");
+					if (general_ip == null || local_ip == null || store_no == null) {
+						navigator.notification.alert("Debe establecer la configuración.");
 						$scope.processing = false;
-						console.log("Un error ha ocurrido!!");
-					});
+					} else {
+						$http.get("http://" + local_ip + "/stock/api/employee/" + pin)
+						.success(function(data, status, headers, config) {
+							if (data == null) {
+				                navigator.notification.alert("PIN INCORRECTO");
+				                $scope.processing = false;
+				                console.log("Usuario no existe!!");
+				            } else {
+				                console.log("Usuario existe!!");
+				                var user = data.FirstName + " " + data.LastName;
+				                window.localStorage.setItem("user", user);
+				                $scope.processing = false;
+				                $location.url('/home');
+				            }
+						})
+						.error(function(data, status, headers, config) {
+							$scope.processing = false;
+							console.log("Un error ha ocurrido!!");
+						});
+					}
 				}
 			};
 		}])
@@ -60,9 +66,9 @@
 			$scope.processing = false;
 			$scope.queryStock = function() {
 				$scope.processing = true;
-				var general_ip = window.localStorage.getItem("general_ip");
+				var local_ip = window.localStorage.getItem("local_ip");
 				var store_no = window.localStorage.getItem("store_no");
-				$http.get("http://" + general_ip + "/stock/api/product/" + $scope.product + "/" + store_no)
+				$http.get("http://" + local_ip + "/stock/api/product/" + $scope.product + "/" + store_no)
 					.success(function(data, status, headers, config) {
 						if (data != null) {
 							$scope.price = "Precio : S/." + data[0].RetailPrice;
