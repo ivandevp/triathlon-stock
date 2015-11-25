@@ -1,6 +1,5 @@
 var app = angular.module('triathlonApp', [
 	'ngRoute',
-	'ui.bootstrap',
 	'triathlon.controllers'
 ]);
 
