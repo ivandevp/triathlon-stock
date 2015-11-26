@@ -60,7 +60,8 @@
 				});
 		}])
 		.controller('StockController', ['$scope', '$http', '$location', function($scope, $http, $location) {
-			$scope.product = '';
+			var stylename = window.localStorage.getItem("stylename");
+			$scope.product = (stylename != null) ? stylename : '';
 			$scope.price = '';
 			$scope.sizes = [];
 			$scope.processing = false;
@@ -77,6 +78,7 @@
 							$scope.webproduct = (data[0].WebProduct == 0) ? "No disponible en Web." : "Disponible en web";
 							$scope.sizes = data;
 							$scope.processing = false;
+							window.localStorage.setItem("stylename", $scope.product);
 						} else {
 							navigator.notification.alert("Producto no existe");
 							$scope.processing = false;
